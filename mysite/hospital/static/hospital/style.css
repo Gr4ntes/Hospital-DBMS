@@ -1,0 +1,251 @@
+* {box-sizing: border-box;}
+.logo-name {
+    width: 447px;
+    float: left;
+    height: 67px;
+    flex-shrink: 0;
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.header-link {
+    color: #5167C1;
+    padding-right: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link {
+    color: #FFF;
+    font-size: 16px;
+    padding-right: 0px;
+}
+
+.header-right {
+    padding-top: 50px;
+    text-align: center;
+    float: right;
+}
+
+.header {
+    width: 100%;
+    min-width: 1000px;
+    height: 176px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px 10px;
+    margin-block-start: 0;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    margin: 0;
+    font-family: Halvetica, sans-serif;
+}
+
+button {
+    background-color: #5167C1;
+    border-radius: 15px;
+    color: white;
+    font-weight: 700;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+}
+
+.promo {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 620px;
+}
+
+.background {
+    width: 1425px;
+    height: 508px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    filter: blur(2px);
+    position: relative;
+    top: 113px;
+    left: 0;
+}
+
+.promo-departments {
+    width: 1400px;
+    height: 538px;
+    border-radius: 35px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 50px;
+    left: 0;
+}
+
+.foreground {
+    width: 840px;
+    height: 620px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.promo-text {
+    width: 759px;
+    color: #FFF;
+    text-align: center;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 800;
+    position: absolute;
+    top: 400px;
+    left: 650px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.departments-title {
+    padding-top: 20px;
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.departments-container {
+    width: 1284px;
+    min-height: 267.786px;
+    border-radius: 20px;
+    background: #5167C1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.department-element {
+    width: 266px;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 20px;
+    background: rgba(255, 252, 252, 0.37);
+}
+
+.department-name {
+    color: #FFF;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-name {
+    color: #000;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.card-background {
+    width: 286.143px;
+    height: 316px;
+    border-radius: 20px;
+    background: #5167C1;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-info {
+    width: 233.406px;
+    height: 220px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.37);
+    margin: 15px;
+}
+
+.head-name {
+    color: #FFF;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.card-description {
+    color: #FFFEFE;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.doctor-icon {
+    width: 250px;
+    height: 257px;
+}
+
+.doctor-nameplate {
+    border-radius: 20px;
+    width: 254px;
+    height: 66px;
+    background: rgba(49, 52, 66, 0.71);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-name {
+    padding-top: 20px;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.doctor-office {
+    margin-top: 5px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.appointment-link {
+    color: #FFF;
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "model": "hospital.Department",
+    "pk": 1,
+    "fields": {
+      "name": "Cardiology",
+      "description": "The Cardiology Department at our hospital is dedicated to providing exceptional care for patients with cardiovascular conditions. Our team of highly skilled cardiologists, nurses, and technicians is committed to delivering comprehensive and personalized treatment options.",
+      "free_beds": 20
+    }
+  },
+  {
+    "model": "hospital.Department",
+    "pk": 2,
+    "fields": {
+      "name": "General Surgery",
+      "description": "The General Surgery department specializes in performing various surgical procedures to treat a wide range of medical conditions, including appendectomies and hernia repairs. Highly skilled surgeons utilize advanced techniques to ensure optimal patient care and recovery.",
+      "free_beds": 20
+    }
+  },
+  {
+    "model": "hospital.Department",
+    "pk": 3,
+    "fields": {
+      "name": "Psychiatry",
+      "description": "The Psychiatry department is dedicated to the diagnosis and treatment of mental health disorders. Compassionate psychiatrists offer comprehensive evaluations and provide therapy and counseling services. They also prescribe medications when necessary to help individuals achieve mental well-being.",
+      "free_beds": 20
+    }
+  },
+  {
+    "model": "hospital.Department",
+    "pk": 4,
+    "fields": {
+      "name": "Neurology",
+      "description": "The Neurology department focuses on diagnosing and treating disorders of the nervous system. Experienced neurologists use advanced diagnostic tools to identify conditions such as epilepsy, stroke, and Alzheimer's disease. They provide personalized treatment plans to manage and improve patients' neurological health.",
+      "free_beds": 20
+    }
+  },
+  {
+    "model": "hospital.Department",
+    "pk": 5,
+    "fields": {
+      "name": "Oncology",
+      "description": "The Oncology department specializes in the diagnosis, treatment, and management of cancer. Multidisciplinary teams of oncologists, radiation therapists, and surgeons work together to provide personalized care. They offer various treatment modalities to ensure the best possible outcomes for cancer patients.",
+      "free_beds": 20
+    }
+  }
+]

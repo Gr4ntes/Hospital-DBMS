@@ -1,0 +1,29 @@
+{% extends "hospital/base-doctor.html" %}
+
+{% block content %}
+<div class="side-container">
+    <h1>General Information</h1>
+    <div class="white-block">
+        <div class="info-line">
+            <h3 class="label">First Name</h3>
+            <h3 class="info">{{ doctor.first_name }}</h3>
+        </div>
+        <div class="info-line">
+            <h3 class="label">Last Name</h3>
+            <h3 class="info">{{ doctor.last_name }}</h3>
+        </div>
+        <div class="info-line">
+            <h3 class="label">Phone number</h3>
+            <h3 class="info">{{ doctor.phone_number }}</h3>
+        </div>
+        <div class="info-line">
+            <h3 class="label">Email</h3>
+            <h3 class="info">{{ doctor.email }}</h3>
+        </div>
+        <div class="info-line">
+            <h3 class="label">Office</h3>
+            <h3 class="info">{{ doctor.office }}</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

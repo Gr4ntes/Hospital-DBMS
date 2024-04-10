@@ -1,0 +1,24 @@
+{% extends "hospital/base-doctor.html" %}
+
+{% block content %}
+<div class="side-container">
+    <h1>Inpatient Treatment</h1>
+    <div class="info-line">
+        <h3 class="inpatient-dprt-label">Department: </h3> <h3 class="inpatient-dprt-info">{{ department.name }}</h3>
+        <h3 class="inpatient-dprt-label">Free beds: </h3> <h3 class="inpatient-dprt-info">{{ department.free_beds }}</h3>
+    </div>
+    <div class="white-block">
+        {% if inpatient %}
+            {% for record in inpatient %}
+                <div class="visit-line">
+                    <h4> {{ record.start_date }} / {{ record.end_date }} </h4>
+                    <h4> {{ record.patient }} </h4>
+                    <h4> {{ record.room }} </h4>
+                    <h4><a class="view-link" href="{% url 'delete_inpatient' user.id record.id %}">Release</a></h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <a id="new-inpatient-link" href="{% url 'doctor_new_inpatient' user.id %}">New Record</a>
+</div>
+{% endblock %}

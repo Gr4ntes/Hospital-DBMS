@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/style_account.css' %}">
+    <meta charset="UTF-8">
+    <title>Doctor Page</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo-name">Brandywine Clinic</h1>
+        <div class="header-right">
+            <a class="header-link" href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="side-menu">
+            <h1>{{ request.user.username }}</h1>
+            <div class="blue-block">
+                <button class="nav-btn"><a class="nav-link" href="{% url 'doctor_account' user.id %}">General Information</a></button>
+                <button class="nav-btn"><a class="nav-link" href="{% url 'doctor_records' user.id %}">Patients' Records</a></button>
+                <button class="nav-btn"><a class="nav-link" href="{% url 'doctor_inpatient' user.id %}">Inpatient Treatment</a></button>
+            </div>
+            <div class="appointment-back">
+                <a class="appointment-link" href="{% url 'doctor_record' user.id %}">Make a record</a>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

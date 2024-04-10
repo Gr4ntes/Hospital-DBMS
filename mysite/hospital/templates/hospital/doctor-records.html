@@ -1,0 +1,27 @@
+{% extends "hospital/base-doctor.html" %}
+
+{% block content %}
+<div class="side-container">
+    <h1>Patients' Records</h1>
+    <div class="white-block">
+        {% if upcoming_appointments %}
+            {% for upcoming_appointment in upcoming_appointments %}
+                <div class="visit-line">
+                    <h4> {{ upcoming_appointment.patient.first_name }} {{ upcoming_appointment.patient.last_name }} </h4>
+                    <h4> {{ upcoming_appointment.time }} </h4>
+                    <h4><a class="view-link" href="{% url 'doctor_record' user.id %}">Add Record</a></h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if previous_appointments %}
+            {% for previous_appointment in previous_appointments %}
+                <div class="visit-line">
+                    <h4> {{ previous_appointment.patient.first_name }} {{ previous_appointment.patient.last_name }} </h4>
+                    <h4> {{ previous_appointment.time }} </h4>
+                    <h4><a class="view-link" href="{% url 'record' user.id previous_appointment.id %}">View</a></h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/style_login.css' %}">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form class="form-block" method="POST" novalidate>
+	    <h2>Brandywine Clinic<br> Account</h2>
+        <h3 class="label">{{form.as_p}}</h3>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+	    {% csrf_token %}
+
+	    <input id="form-button" type="submit" value="Sign In" />
+        <a href="{% url 'register' %}">New Patient? Create an account</a>
+    </form>
+</body>
+</html>

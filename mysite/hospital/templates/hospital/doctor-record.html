@@ -1,0 +1,24 @@
+{% extends "hospital/base-doctor.html" %}
+
+{% block content %}
+        <div class="side-container">
+            <h1>Record Information</h1>
+            <div class="white-block">
+                <div>
+                    <label for="appointment">Appointment:</label>
+                    <input class="text-field" type="text" name="appointment" id="appointment"
+                           value="{{ record.appointment.patient }} {{ record.appointment.time }}">
+                    <br><br>
+                    <label for="problem">Problem:</label>
+                    <textarea class="text-field" type="text" name="problem" id="problem">{{ record.problem }}</textarea>
+                    <br><br>
+                    <label for="treatment">Treatment:</label>
+                    <textarea class="text-field" type="text" name="treatment" id="treatment">{{ record.problem }}</textarea>
+                    <br><br>
+                    <label for="diagnosis">Diagnosis:</label>
+                    <input class="text-field" type="text" name="diagnosis" id="diagnosis" value="{{ record.diagnosis }}">
+                    <br><br>
+                </div>
+            </div>
+        </div>
+{% endblock %}

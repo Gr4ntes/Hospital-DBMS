@@ -1,0 +1,23 @@
+{% extends "hospital/base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="center-container">
+        <div class="promo">
+            <img class="background" src="{% static 'hospital/images/hallway-hospital.jpg' %}">
+            <img class="foreground" src="{% static 'hospital/images/nurse.png' %}">
+            <h1 class="promo-text">Providing Compassionate Care for a Healthier Tomorrow</h1>
+        </div>
+
+        <h2 class="departments-title">Departments</h2>
+        <div class="departments-container">
+            {% if departments_list %}
+                {% for department in departments_list %}
+                    <div class="department-element">
+                        <h2 class="department-name">{{ department.name }}</h2>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

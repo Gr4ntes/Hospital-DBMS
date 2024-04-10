@@ -1,0 +1,18 @@
+{% extends "hospital/base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="card-container">
+        {% if doctors_list %}
+            {% for doctor in doctors_list %}
+                <div class="card">
+                    <img class="doctor-icon" src="{% static 'hospital/images/doctor-icon.png' %}">
+                    <div class="doctor-nameplate">
+                        <h3 class="doctor-name">{{ doctor.first_name }} {{ doctor.last_name }}</h3>
+                        <h2 class="doctor-office">{{ doctor.office }}</h2>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

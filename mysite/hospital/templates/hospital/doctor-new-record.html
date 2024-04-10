@@ -1,0 +1,36 @@
+{% extends "hospital/base-doctor.html" %}
+
+{% block content %}
+        <div class="side-container">
+            <h1>New Record</h1>
+            <div class="white-block">
+                <form method="post">
+                {% csrf_token %}
+                    <label for="appointment">Appointment:</label>
+                    <select class="text-field" name="appointment" id="appointment">
+                        {% for appointment in appointments %}
+                            <option value="{{ appointment.id }}">{{ appointment.patient }} {{ appointment.time }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+                    <label for="problem">Problem:</label>
+                    <textarea class="text-field" type="text" name="problem" id="problem"></textarea>
+                    <br><br>
+                    <label for="treatment">Treatment:</label>
+                    <textarea class="text-field" type="text" name="treatment" id="treatment"></textarea>
+                    <br><br>
+                    <label for="diagnosis">Diagnosis:</label>
+                    <input class="text-field" type="text" name="diagnosis" id="diagnosis">
+                    <br><br>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <input id="form-button" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+{% endblock %}

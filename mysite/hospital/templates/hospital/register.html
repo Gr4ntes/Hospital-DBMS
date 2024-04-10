@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/style_login.css' %}">
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <form class="form-block" method="POST" action="">
+        {% csrf_token %}
+            <h2>Register Patient</h2>
+
+            <div class="row">
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.first_name.label_tag}}</h3>
+                    {{patient_form.first_name}}
+                </div>
+
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.last_name.label_tag}}</h3>
+                    {{patient_form.last_name}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.age.label_tag}}</h3>
+                    {{patient_form.age}}
+                </div>
+
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.gender.label_tag}}</h3>
+                    {{patient_form.gender}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.phone_number.label_tag}}</h3>
+                    {{patient_form.phone_number}}
+                </div>
+
+                <div class="form-field">
+                    <h3 class="label">{{patient_form.email.label_tag}}</h3>
+                    {{patient_form.email}}
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="column">
+                    <h3 class="password-label">{{form.username.label_tag}}</h3>
+                    {{form.username}}
+                </div>
+                <i class="error">{{form.username.errors}}</i>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h3 class="password-label">{{form.password1.label_tag}}</h3>
+                    {{form.password1}}
+                </div>
+                <i class="error">{{form.password1.errors}}</i>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h3 class="password-label">{{form.password2.label_tag}}</h3>
+                    {{form.password2}}
+                </div>
+                <i class="error">{{form.password2.errors}}</i>
+            </div>
+        <input id="form-button" class="btn btn-success btn-block" type="submit" value="Create Profile">
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "hospital/base-account.html" %}
+
+{% block content %}
+<div class="side-container">
+    <h1>Previous Visits</h1>
+    <div class="white-block">
+        {% if upcoming_visits %}
+            {% for upcoming_visit in upcoming_visits %}
+                <div class="visit-line">
+                    <h4> {{ upcoming_visit.time }} </h4>
+                    <h4> {{ upcoming_visit.doctor.first_name }} {{ upcoming_visit.doctor.last_name }}</h4>
+                    <h4><a class="view-link" href="{% url 'delete_appointment' user.id upcoming_visit.id %}">Cancel</a></h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if previous_visits %}
+            {% for previous_visit in previous_visits %}
+                <div class="visit-line">
+                    <h4> {{ previous_visit.time }} </h4>
+                    <h4> {{ previous_visit.doctor.first_name }} {{ previous_visit.doctor.last_name }}</h4>
+                    <h4>Passed</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

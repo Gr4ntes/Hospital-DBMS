@@ -1,0 +1,41 @@
+{% extends "hospital/base-account.html" %}
+
+{% block content %}
+        <div class="side-container">
+            <h1>New Appointment</h1>
+            <div class="white-block">
+                <div>
+                    <label for="telephone">Phone number:</label>
+                    <input class="text-field" type="tel" name="telephone" id="telephone" value="{{ patient.phone_number }}" readonly>
+                    <br><br>
+                    <label for="last_name">Last name:</label>
+                    <input class="text-field" name="last_name" id="last_name" value="{{ patient.last_name }}" readonly>
+                    <br><br>
+                    <label for="first_name">First Name:</label>
+                    <input class="text-field" name="first_name" id="first_name" value="{{ patient.first_name }}" readonly>
+                    <br><br>
+                </div>
+                <form id="appointment-form" method="post">
+                {% csrf_token %}
+                    <label for="doctors">Doctor:</label>
+                    <select class="text-field" name="doctors" id="doctors">
+                        {% for doctor in doctors_list %}
+                            <option value="{{ doctor.id }}">{{ doctor.first_name }} {{ doctor.last_name }}, {{ doctor.department }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+                    <label for="time">Data & Time:</label>
+                    <input class="text-field" type="datetime-local" name="time" id="time">
+                    <br><br>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <input id="form-button" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+{% endblock %}

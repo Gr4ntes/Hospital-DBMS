@@ -1,0 +1,38 @@
+{% extends "hospital/base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="center-container">
+        <div class="promo">
+            <img class="promo-departments" src="{% static 'hospital/images/building.jpg' %}">
+            <h1 class="promo-text">Modern facilities for the best treatment</h1>
+        </div>
+    </div>
+    <div class="card-container">
+        {% if departments_list %}
+            {% for department in departments_list %}
+                <div class="card">
+                    <h2 class="card-name">{{ department.name }}</h2>
+                    <div class="card-background">
+                        <div class="card-info">
+                            <p class="card-description">
+                                {{ department.description }}
+                            </p>
+                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% for group in request.user.groups.all %}
+                                {% if group.name == "Patients" %}
+                                    <button><a class="appointment-link" href="{% url 'patient_appointment' user.id %}">Make an appointment</a></button>
+                                {% else %}
+                                    <button><a class="appointment-link" href="{% url 'index' %}">Make an appointment</a></button>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <button><a class="appointment-link" href="{% url 'login' %}">Make an appointment</a></button>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
